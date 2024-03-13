@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicativo web para cálculo e emissão de relatório de horas trabalhadas.">
+    <meta name="keywords"
+        content="Aplicativo web, app para cálculo de horas, mobile, app responsivo,responsividade,cálculo de horas,programação web">
+    <meta name="author" content="Daniel Lopes Bemfica">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Calculadora de serviços</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body>
+    <main class="container">
+        <section id="open" class="aberturaOpen">
+            <header class="tituloOpen">
+                <h1 id="tituloLumi" class="neonOff">Job calculator</h1>
+                <audio src="./audio/electricCurto.mp3" id="som2" type="audio/mpeg">Seu navegador não é
+                    compatível com este tipo de arquivo de audio!</audio>
+            </header>
+
+            <!--Botão liga/desliga-->
+            <section class="capaBotaoOnOff">
+                <div>
+                    <div class="buttonOnOff">
+                        <a href="#" id="ligaDesliga"><i class="fa-solid fa-power-off"></i></a>
+                    </div>
+                    <audio src="./audio/compSingleKeyb.mp3" id="som1" type="audio/mpeg">Seu navegador não é
+                        compatível com este tipo de arquivo de audio!</audio>
+                </div>
+            </section>
+
+            <!--Botão abre folha de dados-->
+            <div class="capaBotao">
+                <div class="job">
+                    <a href="#" id="novoServico">New Job</a>
+                    <audio src="./audio/compSingleKeyb.mp3" id="som3" type="audio/mpeg">Seu navegador não é
+                        compatível com este tipo de arquivo de audio!</audio>
+                </div>
+            </div>
+        </section>
+
+        <section id="entradaDados" class="dadosClosed">
+            <header class="titulo ">
+                <h1 class="animate__animated animate__lightSpeedInLeft">Job Calculator</h1>
+            </header>
+
+            <form id="formulario">
+                <label for="entradaData">Data</label>
+                <input type="text" id="entradaData" name="entradaData" title="Digite a data no formato ddmmaaaa."
+                    placeholder="Insira a data..." autocomplete="off" tabindex="1">
+                <label for="paciente">Paciente</label>
+                <input type="text" id="paciente" class="inputPaciente"
+                    title="...não é necessário escrever a primeira letra maiúscula!"
+                    placeholder="Insira o nome do paciente..." autocomplete="off" tabindex="2">
+                <div class="locais">
+                    <h4 id="labelLocal">Local</h4>
+                    <input type="radio" id="clinica" class="local" name="local" value="clínica" tabindex="3">
+                    <label for="clinica">Clínica</label>
+                    <input type="radio" id="house" class="local" name="local" value="casa" tabindex="4">
+                    <label for="house">Casa</label>
+                    <input type="radio" id="school" class="local" name="local" value="colégio" tabindex="5">
+                    <label for="school">Colégio</label>
+                    <input type="radio" id="fsap" class="local" name="local" value="FSAP" tabindex="6">
+                    <label for="fsap">FSAP</label>
+                </div>
+                <label for="horaInicio">Hora de início:</label>
+                <input type="time" id="horaInicio" name="horaInicio" tabindex="7"><br>
+                <label data-label="horaFim" for="horaFim">Hora de fim:</label>
+                <input type="time" id="horaFim" name="horaFim" tabindex="8"><br>
+
+                <section class="botaoTresDe">
+                    <div>
+                        <div class="button">
+                            <a href="#" id="lancaInfos" onclick="lancar()">Lançar</a>
+                        </div>
+                        <audio src="./audio/chachRegister.mp3" id="som4" type="audio/mpeg">Seu navegador não é
+                            compatível com este tipo de arquivo de audio!</audio>
+                    </div>
+                </section>
+            </form>
+            <div class="busca">
+                <h4 id="labelBusca">Filtrar</h4>
+                <input type="text" id="input-busca" title="Para filtrar vários dados, insira um espaço entre eles."
+                    placeholder="o que você procura?" autocomplete="off">
+            </div>
+            <section class="content">
+                <!--<h3 id="subTitulo" class="oculto">Lista de coisas pra se fazer!!!</h3>-->
+                <h3 id="tituloRelatorio" class="oculto">Relatório de Horas Trabalhadas</h3>
+                <div id="cabecalhoRelat">
+                    <div id="dadosWorker">
+                        <p id="name" class="oculto"></p>
+                    </div>
+                    <div id="dadosMesAno">
+                        <p id="monthYear" class="oculto"></p>
+                    </div>
+                </div>
+
+                <table id="tabela" border="1" width="100%">
+                    <tr>
+                        <th>Data</th>
+                        <th>Paciente</th>
+                        <th>Local</th>
+                        <th>Hora de início</th>
+                        <th>Hora de fim</th>
+                        <th>Sub Total</th>
+                    </tr>
+                </table>
+                <div id="total">
+                    <fieldset id="campoTotalHoras">
+                        <legend>Total de Horas Trabalhadas</legend>
+                        <div>
+                            <p id="calcTotalHoras">00:00hs</p>
+                        </div>
+                    </fieldset>
+                </div>
+            </section>
+
+            <footer class="comandos">
+                <div class="edicao">
+                    <button class="controls" id="editarDados" onclick="editar()" title="Editar linha"><i
+                            class="fa-solid fa-pencil"></i></button>
+                    <button class="controls" id="finalizaEdit" onclick="finalizarEdicao()" title="Finaliza edição"><i
+                            class="fa-solid fa-pen-to-square"></i></button>
+                    <audio src="./audio/alertaModal.mp3" id="somAlert" type="audio/mpeg">Seu navegador não suporta este
+                        tipo de arquivo de
+                        audio!</audio>
+                    <button id="btnDeletarLinha" title="Deletar linha"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+                <div class="relatExit">
+                    <button class="controls" id="relatorio" onclick="geraPrompt()" title="Gerar relatório"><i
+                            class="fa-solid fa-chart-bar"></i></button>
+                    <button id="encerrar" onclick="encerrar()" title="Fechar página"><i
+                            class="fa-solid fa-circle-xmark"></i></button>
+
+                </div>
+
+            </footer>
+        </section>
+    </main>
+    <script src="./js/filtroPesquisa2Victor1.js"></script>
+    <script src="./js/configRelatVictor.js"></script>
+    <script src="./js/calculaHorasEditVictor4.js"></script>
+    <script src="./js/editTableVictor6.js"></script>
+    <script src="./js/openClosePages2.js"></script>
+    <script src="./js/ligaRegistradora.js"></script>
+    <script src="./js/excluiLinhaVictor1.js"></script>
+
+</body>
+
+</html>

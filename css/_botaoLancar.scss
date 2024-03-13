@@ -1,0 +1,66 @@
+/*Botão lançar dados*/
+.button {
+    width: 80px;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    z-index: 2;
+
+
+    a {
+        color: $branco;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        background-color: $backBotOnOff;
+        /* Cinza */
+        display: block;
+        position: relative;
+        padding: 6px 8px;
+
+        -webkit-tap-highlight-color: $profundBotOnOff;
+        text-shadow: 0px 1px 0px $pretoAbsoluto;
+        filter: dropshadow(color=$pretoAbsoluto, offx=0px, offy=1px);
+
+        -webkit-box-shadow: inset 0 1px 0 $sombraInterna1, 0 10px 0 $sombraInterna2;
+        /* Cinza claro e Cinza escuro */
+        -moz-box-shadow: inset 0 1px 0 $sombraInterna1, 0 10px 0 $sombraInterna2;
+        /* Cinza claro e Cinza escuro */
+        box-shadow: inset 0 1px 0 $sombraInterna1, 0 10px 0 $sombraInterna2;
+        /* Cinza claro e Cinza escuro */
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    & a:active {
+        top: 10px;
+        background-color: $sombraInterna2;
+
+
+        -webkit-box-shadow: inset 0 1px 0 $sombraInterna1, inset 0 -3px 0 $sombraInterna2;
+        /* Cinza claro e Cinza escuro */
+        -moz-box-shadow: inset 0 1px 0 $sombraInterna1, inset 0 -3pxpx 0 $sombraInterna2;
+        /* Cinza claro e Cinza escuro */
+        box-shadow: inset 0 1px 0 $sombraInterna1, inset 0 -3px 0 $sombraInterna2;
+        /* Cinza claro e Cinza escuro */
+    }
+
+    &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        padding: 4px;
+        position: absolute;
+        bottom: -15px;
+        left: -4px;
+        z-index: -1;
+        background-color: $bordaBotao;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+}

@@ -1,0 +1,24 @@
+/*Primeira página do aplicativo*/
+/*Configurando a página de abertura*/
+.aberturaOpen::after {
+    content: "";
+    background: linear-gradient(to top, $backAbert1, $backAbert2);
+    opacity: 1.0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+}
+
+.aberturaOpen {
+    /*border: 2px solid red;*/
+    width: 100%;
+    height: 100vh;
+    background-image: url('../image/capaJobCalc3-Photoroom.png-Photoroom.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}

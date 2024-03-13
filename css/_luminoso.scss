@@ -1,0 +1,74 @@
+/*Luminoso desligado*/
+.neonOff {
+    display: none;
+}
+
+.neon {
+    border: 8px solid $neonLigth;
+    border-radius: 10px;
+    font-family: "Itim", cursive;
+    height: 95%;
+    display: inline-block;
+    font-size: 2em;
+    padding: 8px;
+    margin-top: 5px;
+    color: $neonLigth;
+    text-shadow: 0 0 8px $sombraLatter, 0 0 29px $neonLigth;
+
+    box-shadow: inset 0 0 32px $neonLigth, 0 0 32px $neonLigth;
+
+    position: relative;
+}
+
+.neon::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $neonLigth;
+    left: 0;
+    top: 120%;
+    transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+    filter: blur(64px);
+    opacity: 0.7;
+}
+
+.neon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $neonLigth;
+    box-shadow: 0 0 128px 32px $neonLigth;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+
+/*Animando o texto ao abrir a página*/
+.neon {
+    /* ... */
+    animation: flash 500ms;
+    /* nome, duração e repetição da animação */
+}
+
+/*Animação do letreiro da máquina*/
+@keyframes flash {
+    0% {
+        opacity: 0;
+        /* início da animação, sem brilho */
+    }
+
+    50% {
+        opacity: 1;
+        /* meio da animação, brilho máximo */
+    }
+
+    100% {
+        opacity: 0;
+        /* fim da animação, sem brilho */
+    }
+}

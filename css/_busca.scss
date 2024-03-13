@@ -1,0 +1,21 @@
+/*Input busca*/
+.busca {
+    /*border: 2px solid blue;*/
+    border-radius: 5px;
+    width: 98%;
+    margin-top: 10px;
+    /*margin-left: 5px;*/
+    padding: 5px;
+    box-shadow: 3px 3px 5px $rato, -3px -3px 5px $rato;
+
+}
+
+#labelBusca {
+    margin-left: 10px;
+
+}
+
+#input-busca {
+    @include estiloInputs();
+    height: 20px;
+}

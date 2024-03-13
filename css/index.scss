@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Montserrat&family=Noto+Color+Emoji&display=swap');
+@import"./variaveisCores";
+@import"./estiloInputs";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    /*border: 2px dashed blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+/*---------------------------------------------------------------*/
+/*Primeira página do aplicativo*/
+@import"./paginaAbertura";
+
+/*---------------------------------------------------------------------*/
+/*Config do back do lumi*/
+.tituloOpen {
+    display: flex;
+    justify-content: center;
+    background-color: $breu;
+    text-align: center;
+    width: 29%;
+    height: 11%;
+    position: absolute;
+    top: 15%;
+    left: 35.3%;
+    border-radius: 10px;
+}
+
+/*Luminoso da máquina*/
+@import "./luminoso";
+/*--------------------------------------------------------------*/
+
+/*Escondendo a section id open*/
+.aberturaClosed {
+    display: none;
+
+}
+
+
+
+/*------------------------------------------------------------*/
+/*Botão liga e desliga máquina*/
+@import"./botaoOnOff";
+
+/*-------------------------------------------------------------*/
+/*Botão New Job*/
+@import"./botaoNewJob";
+/*-------------------------------------------------------------------*/
+/*Escondendo a section id entradaDados*/
+
+.dadosClosed {
+    display: none;
+}
+
+/*----------------------------------*/
+/*Reaparecendo a section id entradaDados*/
+
+.dadosOpen {
+    /*border: 3px solid green;*/
+    display: flex;
+    flex-direction: column;
+    background-color: $brancoFumaca;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/*-------------------------------------------------------------------*/
+/*Segunda página do aplicativo*/
+.titulo {
+    /*border: 3px solid black;*/
+    width: 98%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+form {
+    /*border: 2px solid red;*/
+    width: 98%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 5px $rato, -3px -3px 5px $rato;
+    padding: 5px;
+}
+
+label {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/*Campos input do form*/
+#entradaData {
+    width: 110px;
+    @include estiloInputs();
+    height: 20px;
+}
+
+#paciente {
+    width: 55%;
+    @include estiloInputs();
+    height: 20px;
+}
+
+.locais {
+    /*border: 1px solid palevioletred;*/
+    margin-top: 5px;
+}
+
+#labelLocal {
+    margin-left: 10px;
+}
+
+#clinica,
+#house,
+#school,
+#fsap {
+    margin-left: 6px;
+}
+
+[data-label="horaFim"] {
+    margin-top: 1px;
+}
+
+#horaInicio,
+#horaFim {
+    width: 100px;
+    @include estiloInputs();
+}
+
+/*--------------------------------------------------------------------*/
+
+/*Estilo base do botão nos tons de cinza*/
+
+/*Botão lançar dados*/
+@import "./botaoLancar";
+
+/*----------------------------------------------------------------*/
+/*Input busca*/
+@import "./busca";
+
+/*----------------------------------------------------*/
+/*Todo o conteúdo da tabela incluindo dados do relatório*/
+@import "./content";
+
+/*----------------------------------------------------------------*/
+/*Secção dos controles e comandos*/
+@import "./footerComandos";
+
+
+/*------------------------------------------------*/
+
+
+/*breakpoints  e RESPONSIVIDADE  */
+/*Resoluções de aparelhos acima de 1201px de largura de tela*/
+@media only screen and (min-width:1201px) {
+
+    /*Responsividade do botão buttonOnOff*/
+    /*.capaBotaoOnOff {
+        top: 70%;
+        left: 33%;
+    }*/
+
+
+    /*Responsividade do botão new job*/
+    .capaBotao {
+        /*position: absolute;*/
+        top: 69.2%;
+        left: 42%;
+        transform: translate(-5%, -5%);
+    }
+
+
+    .job {
+        width: 185.2%;
+    }
+
+
+    .job a {
+        padding: 10% 8px;
+    }
+}
+
+/*-----------------------------------------------------------------*/
+/*Resolução de aparelhos entre 1025px e 1200px de largura de tela */
+@media only screen and (max-width: 1200px) and (min-width:1025px) {
+
+    /*Responsividade do botão buttonOnOff*/
+    /*.capaBotaoOnOff {
+        top: 70%;
+        left: 37%;
+    }*/
+
+
+    /*Responsividade do botão new job*/
+    .capaBotao {
+        /*position: absolute;*/
+        top: 68%;
+        left: 38%;
+        transform: translate(-5%, -5%);
+    }
+
+
+    .job {
+        width: 174%;
+    }
+
+
+    .job a {
+        padding: 12% 8px;
+    }
+
+
+
+}
+
+/*-------------------------------------------------------------------*/
+/*Resolução de aparelhos entre 769px e 1024px de largura de tela */
+@media only screen and (max-width: 1024px) and (min-width:769px) {
+
+    /*Responsividade da tela preta do header*/
+    .tituloOpen {
+        width: 58%;
+        height: 9%;
+        top: 24.4%;
+        left: 21%;
+
+    }
+
+    /*Responsividade do h1 tituloLumi*/
+    .neon {
+        height: 91%;
+        font-size: 1.5em;
+        padding: 5px;
+        margin-top: 4px;
+    }
+
+
+
+    /*Responsividade do botão buttonOnOff*/
+    .capaBotaoOnOff {
+        top: 64.8%;
+        left: 21%;
+    }
+
+
+    /*Responsividade do botão new job*/
+    .capaBotao {
+        /*position: absolute;*/
+        top: 63%;
+        left: 36%;
+        transform: translate(-5%, -5%);
+    }
+
+
+    .job {
+        width: 155%;
+    }
+
+
+    .job a {
+        padding: 13% 8px;
+    }
+
+
+
+}
+
+
+
+
+/*--------------------------------------------------------------*/
+/*Resolução de aparelhos entre 481px e 768px de largura de tela */
+@media only screen and (max-width: 768px) and (min-width:481px) {
+
+    /*Responsividade da tela preta do header*/
+    .tituloOpen {
+        width: 58%;
+        height: 10%;
+        top: 21%;
+        left: 20%;
+
+    }
+
+    /*Responsividade do h1 tituloLumi*/
+    .neon {
+        height: 91%;
+        font-size: 1.5em;
+        padding: 5px;
+        margin-top: 4px;
+    }
+
+
+    /*Responsividade do botão buttonOnOff*/
+    .capaBotaoOnOff {
+        top: 66%;
+        left: 21%;
+    }
+
+
+    /*Responsividade do botão new job*/
+    .capaBotao {
+        /*position: absolute;*/
+        top: 65%;
+        left: 36%;
+        transform: translate(-5%, -5%);
+    }
+
+
+    .job {
+        width: 141%;
+    }
+
+
+    .job a {
+        padding: 12% 8px;
+    }
+
+
+
+}
+
+
+/*-----------------------------------------------------------------*/
+
+/*Resolução de smartphones entre 320 e 480px de largura de tela */
+@media only screen and (max-width: 480px) and (min-width:320px) {
+
+    /*Responsividade da tela preta do header*/
+    .tituloOpen {
+        width: 64%;
+        height: 10%;
+        top: 27%;
+        left: 18%;
+
+    }
+
+    /*Responsividade do h1 tituloLumi*/
+    .neon {
+        height: 95%;
+        font-size: 1.5em;
+        padding: 3px;
+        margin-top: 2px;
+    }
+
+
+    /*Responsividade do botão buttonOnOff*/
+    .capaBotaoOnOff {
+        top: 58.5%;
+        left: 13.5%;
+    }
+
+
+
+
+    /*Responsividade do botão new job*/
+    .capaBotao {
+        /*position: absolute;*/
+        top: 58.5%;
+        left: 34%;
+        transform: translate(-5%, -5%);
+    }
+
+
+    .job {
+        width: 75%;
+    }
+
+
+    .job a {
+        padding: 5% 8px;
+    }
+
+
+
+}
