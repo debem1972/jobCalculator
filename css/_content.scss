@@ -1,0 +1,109 @@
+/*Todo o conteúdo da tabela incluindo dados do relatório*/
+.content {
+    /*border: 2px solid red;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 98%;
+    margin-top: 5px;
+    /*margin-left: 5px;*/
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px $rato, -3px -3px 5px $rato;
+}
+
+h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#cabecalhoRelat {
+    /*border: 1px solid green;*/
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dadosWorker {
+    /*border: 2px solid blue;*/
+    width: 50%;
+    height: 20px;
+}
+
+#name {
+    margin-left: 40px;
+}
+
+#dadosMesAno {
+    /* border: 1px solid red;*/
+    width: 50%;
+    height: 20px;
+}
+
+#monthYear {
+    float: right;
+    margin-right: 40px;
+}
+
+#tabela {
+    margin-top: 5px;
+    text-align: center;
+
+
+    td,
+    th {
+        padding: 2px;
+    }
+}
+
+
+
+.tituloVisivel {
+    display: block;
+}
+
+.oculto {
+    display: none;
+}
+
+/*-----------------------------------------------------------------*/
+
+/*Ver qual elemento está aplicada esta class*/
+.editing {
+    background-color: $sangue;
+    color: $branco;
+}
+
+/*--------------------------------------------*/
+
+.linha-selecionada {
+    background-color: $verdeLumi;
+    font-weight: bold;
+}
+
+
+#total {
+    width: 100%;
+}
+
+#campoTotalHoras {
+    padding-left: 5px;
+    box-shadow: 3px 3px 5px $rato;
+    border: none;
+    border-radius: 5px;
+    background-color: $sombraInterna1;
+}
+
+#campoTotalHoras legend {
+    font-weight: bold;
+}
+
+#calcTotalHoras {
+    font-size: 1.4em;
+    text-shadow: 3px 3px 2px $branco;
+
+}

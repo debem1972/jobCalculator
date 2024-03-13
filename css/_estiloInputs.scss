@@ -1,0 +1,7 @@
+    @mixin estiloInputs() {
+        padding-left: 10px;
+        margin-left: 6px;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 2px 2px 3px $rato;
+    }

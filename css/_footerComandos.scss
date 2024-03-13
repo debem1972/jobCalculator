@@ -1,0 +1,70 @@
+/*Secção dos controles e comandos*/
+
+.comandos {
+    /*border: 2px solid black;*/
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    box-shadow: 3px 3px 5px $rato, -3px 3px 5px $rato;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.edicao {
+    /* border: 1px solid green;*/
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+
+
+    button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
+
+.relatExit {
+    /*border: 1px solid blue;*/
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 5px;
+
+
+    button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+.controls,
+#encerrar {
+    cursor: pointer;
+}
+
+
+
+/*Efeitos nos botões*/
+.controls:hover {
+    background-color: $sombraInterna2;
+    color: $branco;
+}
+
+#btnDeletarLinha:hover {
+    background-color: $sombraInterna2;
+    color: $sangue;
+    text-shadow: 2px 2px 4px $branco, -2px -2px 4px $branco;
+}
+
+#encerrar:hover {
+    background-color: $sangue;
+    color: $branco;
+}

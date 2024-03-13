@@ -1,0 +1,78 @@
+/*Div que encapsula a div .job para garantir o posicionamento do botão*/
+.capaBotao {
+    /*border: 2px solid red;*/
+    position: absolute;
+    top: 73%;
+    left: 36%;
+    transform: translate(-5%, -5%);
+}
+
+/*O botão 3d*/
+#novoServico {
+    /*border: 3px solid goldenrod;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/*Div em que o botão está encapsulado*/
+.job {
+    /*border: 2px solid green;*/
+    width: 212%;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    z-index: 2;
+
+
+
+    a {
+        color: $branco;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 17px;
+        text-align: center;
+        text-decoration: none;
+        background-color: $backBotNewJob;
+        display: block;
+        position: relative;
+        padding: 32px 8px;
+
+        -webkit-tap-highlight-color: $profundBotOnOff;
+        text-shadow: 0px 1px 0px $pretoAbsoluto;
+        filter: dropshadow(color=$pretoAbsoluto, offx=0px, offy=1px);
+
+        -webkit-box-shadow: inset 0 1px 0 $sombrInt1, 0 10px 0 $sombrInt2;
+        -moz-box-shadow: inset 0 1px 0 $sombrInt1, 0 10px 0 $sombrInt2;
+        box-shadow: inset 0 1px 0 $sombrInt1, 0 10px 0 $sombrInt2;
+
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    & a:active {
+        top: 10px;
+        background-color: $backBotNewJob2;
+
+        -webkit-box-shadow: inset 0 1px 0 $sombrInt1, inset 0 -3px 0 $sombrInt2;
+        -moz-box-shadow: inset 0 1px 0 $sombrInt1, inset 0 -3pxpx 0 $sombrInt2;
+        box-shadow: inset 0 1px 0 $sombrInt1, inset 0 -3px 0 $sombrInt2;
+    }
+
+    &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        padding: 4px;
+        position: absolute;
+        bottom: -15px;
+        left: -4px;
+        z-index: -1;
+        background-color: $bordaBotao;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+}

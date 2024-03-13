@@ -1,0 +1,766 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Montserrat&family=Noto+Color+Emoji&display=swap");
+/*Cores de fundo da abertura*/
+/*------------------------------------*/
+/*Cores usuais*/
+/*--------------------------------------*/
+/*Cores do luminoso*/
+/*---------------------------------------*/
+/*Cores botão liga/desl*/
+/*----------------------------------------*/
+/*Cores botão new job*/
+/*----------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /*border: 2px dashed blue;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+/*---------------------------------------------------------------*/
+/*Primeira página do aplicativo*/
+/*Primeira página do aplicativo*/
+/*Configurando a página de abertura*/
+.aberturaOpen::after {
+  content: "";
+  background: linear-gradient(to top, #d4a174, #e6dab4);
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -2;
+}
+
+.aberturaOpen {
+  /*border: 2px solid red;*/
+  width: 100%;
+  height: 100vh;
+  background-image: url("../image/capaJobCalc3-Photoroom.png-Photoroom.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/*---------------------------------------------------------------------*/
+/*Config do back do lumi*/
+.tituloOpen {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  text-align: center;
+  width: 29%;
+  height: 11%;
+  position: absolute;
+  top: 15%;
+  left: 35.3%;
+  border-radius: 10px;
+}
+
+/*Luminoso da máquina*/
+/*Luminoso desligado*/
+.neonOff {
+  display: none;
+}
+
+.neon {
+  border: 8px solid #14fff1;
+  border-radius: 10px;
+  font-family: "Itim", cursive;
+  height: 95%;
+  display: inline-block;
+  font-size: 2em;
+  padding: 8px;
+  margin-top: 5px;
+  color: #14fff1;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 29px #14fff1;
+  box-shadow: inset 0 0 32px #14fff1, 0 0 32px #14fff1;
+  position: relative;
+}
+
+.neon::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #14fff1;
+  left: 0;
+  top: 120%;
+  transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+  filter: blur(64px);
+  opacity: 0.7;
+}
+
+.neon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #14fff1;
+  box-shadow: 0 0 128px 32px #14fff1;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+/*Animando o texto ao abrir a página*/
+.neon {
+  /* ... */
+  animation: flash 500ms;
+  /* nome, duração e repetição da animação */
+}
+
+/*Animação do letreiro da máquina*/
+@keyframes flash {
+  0% {
+    opacity: 0;
+    /* início da animação, sem brilho */
+  }
+  50% {
+    opacity: 1;
+    /* meio da animação, brilho máximo */
+  }
+  100% {
+    opacity: 0;
+    /* fim da animação, sem brilho */
+  }
+}
+/*--------------------------------------------------------------*/
+/*Escondendo a section id open*/
+.aberturaClosed {
+  display: none;
+}
+
+/*------------------------------------------------------------*/
+/*Botão liga e desliga máquina*/
+/*Div que encapsula a div .buttonOnOff para garantir o posicionamento do botão*/
+.capaBotaoOnOff {
+  position: absolute;
+  top: 70.5%;
+  left: 36%;
+  transform: translate(-5%, -5%);
+}
+
+/*Botão liga/desliga*/
+.buttonOnOff {
+  width: 50px;
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  z-index: 2;
+}
+.buttonOnOff a {
+  color: red;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #808080;
+  display: block;
+  position: relative;
+  padding: 6px 8px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  /* Cinza claro e Cinza escuro */
+  /* Cinza claro e Cinza escuro */
+  box-shadow: inset 0 1px 0 #D3D3D3, 0 10px 0 #696969;
+  /* Cinza claro e Cinza escuro */
+  border-radius: 5px;
+}
+.buttonOnOff a:active {
+  top: 10px;
+  background-color: #696969;
+  /* Cinza escuro */
+  /* Cinza claro e Cinza escuro */
+  /* Cinza claro e Cinza escuro */
+  box-shadow: inset 0 1px 0 #D3D3D3, inset 0 -3px 0 #696969;
+  /* Cinza claro e Cinza escuro */
+}
+.buttonOnOff::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #2B1800;
+  border-radius: 5px;
+}
+
+/*-------------------------------------------------------------*/
+/*Botão New Job*/
+/*Div que encapsula a div .job para garantir o posicionamento do botão*/
+.capaBotao {
+  /*border: 2px solid red;*/
+  position: absolute;
+  top: 73%;
+  left: 36%;
+  transform: translate(-5%, -5%);
+}
+
+/*O botão 3d*/
+#novoServico {
+  /*border: 3px solid goldenrod;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*Div em que o botão está encapsulado*/
+.job {
+  /*border: 2px solid green;*/
+  width: 212%;
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  z-index: 2;
+}
+.job a {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #FFA12B;
+  display: block;
+  position: relative;
+  padding: 32px 8px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  box-shadow: inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  border-radius: 5px;
+}
+.job a:active {
+  top: 10px;
+  background-color: #F78900;
+  box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+.job::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #2B1800;
+  border-radius: 5px;
+}
+
+/*-------------------------------------------------------------------*/
+/*Escondendo a section id entradaDados*/
+.dadosClosed {
+  display: none;
+}
+
+/*----------------------------------*/
+/*Reaparecendo a section id entradaDados*/
+.dadosOpen {
+  /*border: 3px solid green;*/
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/*-------------------------------------------------------------------*/
+/*Segunda página do aplicativo*/
+.titulo {
+  /*border: 3px solid black;*/
+  width: 98%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+form {
+  /*border: 2px solid red;*/
+  width: 98%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 5px grey, -3px -3px 5px grey;
+  padding: 5px;
+}
+
+label {
+  margin-left: 10px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/*Campos input do form*/
+#entradaData {
+  width: 110px;
+  padding-left: 10px;
+  margin-left: 6px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px grey;
+  height: 20px;
+}
+
+#paciente {
+  width: 55%;
+  padding-left: 10px;
+  margin-left: 6px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px grey;
+  height: 20px;
+}
+
+.locais {
+  /*border: 1px solid palevioletred;*/
+  margin-top: 5px;
+}
+
+#labelLocal {
+  margin-left: 10px;
+}
+
+#clinica,
+#house,
+#school,
+#fsap {
+  margin-left: 6px;
+}
+
+[data-label=horaFim] {
+  margin-top: 1px;
+}
+
+#horaInicio,
+#horaFim {
+  width: 100px;
+  padding-left: 10px;
+  margin-left: 6px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px grey;
+}
+
+/*--------------------------------------------------------------------*/
+/*Estilo base do botão nos tons de cinza*/
+/*Botão lançar dados*/
+/*Botão lançar dados*/
+.button {
+  width: 80px;
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  z-index: 2;
+}
+.button a {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #808080;
+  /* Cinza */
+  display: block;
+  position: relative;
+  padding: 6px 8px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  /* Cinza claro e Cinza escuro */
+  /* Cinza claro e Cinza escuro */
+  box-shadow: inset 0 1px 0 #D3D3D3, 0 10px 0 #696969;
+  /* Cinza claro e Cinza escuro */
+  border-radius: 5px;
+}
+.button a:active {
+  top: 10px;
+  background-color: #696969;
+  /* Cinza claro e Cinza escuro */
+  /* Cinza claro e Cinza escuro */
+  box-shadow: inset 0 1px 0 #D3D3D3, inset 0 -3px 0 #696969;
+  /* Cinza claro e Cinza escuro */
+}
+.button::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+  position: absolute;
+  bottom: -15px;
+  left: -4px;
+  z-index: -1;
+  background-color: #2B1800;
+  border-radius: 5px;
+}
+
+/*----------------------------------------------------------------*/
+/*Input busca*/
+/*Input busca*/
+.busca {
+  /*border: 2px solid blue;*/
+  border-radius: 5px;
+  width: 98%;
+  margin-top: 10px;
+  /*margin-left: 5px;*/
+  padding: 5px;
+  box-shadow: 3px 3px 5px grey, -3px -3px 5px grey;
+}
+
+#labelBusca {
+  margin-left: 10px;
+}
+
+#input-busca {
+  padding-left: 10px;
+  margin-left: 6px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px grey;
+  height: 20px;
+}
+
+/*----------------------------------------------------*/
+/*Todo o conteúdo da tabela incluindo dados do relatório*/
+/*Todo o conteúdo da tabela incluindo dados do relatório*/
+.content {
+  /*border: 2px solid red;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 98%;
+  margin-top: 5px;
+  /*margin-left: 5px;*/
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px grey, -3px -3px 5px grey;
+}
+
+h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#cabecalhoRelat {
+  /*border: 1px solid green;*/
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dadosWorker {
+  /*border: 2px solid blue;*/
+  width: 50%;
+  height: 20px;
+}
+
+#name {
+  margin-left: 40px;
+}
+
+#dadosMesAno {
+  /* border: 1px solid red;*/
+  width: 50%;
+  height: 20px;
+}
+
+#monthYear {
+  float: right;
+  margin-right: 40px;
+}
+
+#tabela {
+  margin-top: 5px;
+  text-align: center;
+}
+#tabela td,
+#tabela th {
+  padding: 2px;
+}
+
+.tituloVisivel {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}
+
+/*-----------------------------------------------------------------*/
+/*Ver qual elemento está aplicada esta class*/
+.editing {
+  background-color: red;
+  color: white;
+}
+
+/*--------------------------------------------*/
+.linha-selecionada {
+  background-color: lime;
+  font-weight: bold;
+}
+
+#total {
+  width: 100%;
+}
+
+#campoTotalHoras {
+  padding-left: 5px;
+  box-shadow: 3px 3px 5px grey;
+  border: none;
+  border-radius: 5px;
+  background-color: #D3D3D3;
+}
+
+#campoTotalHoras legend {
+  font-weight: bold;
+}
+
+#calcTotalHoras {
+  font-size: 1.4em;
+  text-shadow: 3px 3px 2px white;
+}
+
+/*----------------------------------------------------------------*/
+/*Secção dos controles e comandos*/
+/*Secção dos controles e comandos*/
+.comandos {
+  /*border: 2px solid black;*/
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  box-shadow: 3px 3px 5px grey, -3px 3px 5px grey;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.edicao {
+  /* border: 1px solid green;*/
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+}
+.edicao button {
+  width: 35px;
+  height: 35px;
+}
+
+.relatExit {
+  /*border: 1px solid blue;*/
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+}
+.relatExit button {
+  width: 35px;
+  height: 35px;
+}
+
+.controls,
+#encerrar {
+  cursor: pointer;
+}
+
+/*Efeitos nos botões*/
+.controls:hover {
+  background-color: #696969;
+  color: white;
+}
+
+#btnDeletarLinha:hover {
+  background-color: #696969;
+  color: red;
+  text-shadow: 2px 2px 4px white, -2px -2px 4px white;
+}
+
+#encerrar:hover {
+  background-color: red;
+  color: white;
+}
+
+/*------------------------------------------------*/
+/*breakpoints  e RESPONSIVIDADE  */
+/*Resoluções de aparelhos acima de 1201px de largura de tela*/
+@media only screen and (min-width: 1201px) {
+  /*Responsividade do botão buttonOnOff*/
+  /*.capaBotaoOnOff {
+      top: 70%;
+      left: 33%;
+  }*/
+  /*Responsividade do botão new job*/
+  .capaBotao {
+    /*position: absolute;*/
+    top: 69.2%;
+    left: 42%;
+    transform: translate(-5%, -5%);
+  }
+  .job {
+    width: 185.2%;
+  }
+  .job a {
+    padding: 10% 8px;
+  }
+}
+/*-----------------------------------------------------------------*/
+/*Resolução de aparelhos entre 1025px e 1200px de largura de tela */
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+  /*Responsividade do botão buttonOnOff*/
+  /*.capaBotaoOnOff {
+      top: 70%;
+      left: 37%;
+  }*/
+  /*Responsividade do botão new job*/
+  .capaBotao {
+    /*position: absolute;*/
+    top: 68%;
+    left: 38%;
+    transform: translate(-5%, -5%);
+  }
+  .job {
+    width: 174%;
+  }
+  .job a {
+    padding: 12% 8px;
+  }
+}
+/*-------------------------------------------------------------------*/
+/*Resolução de aparelhos entre 769px e 1024px de largura de tela */
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  /*Responsividade da tela preta do header*/
+  .tituloOpen {
+    width: 58%;
+    height: 9%;
+    top: 24.4%;
+    left: 21%;
+  }
+  /*Responsividade do h1 tituloLumi*/
+  .neon {
+    height: 91%;
+    font-size: 1.5em;
+    padding: 5px;
+    margin-top: 4px;
+  }
+  /*Responsividade do botão buttonOnOff*/
+  .capaBotaoOnOff {
+    top: 64.8%;
+    left: 21%;
+  }
+  /*Responsividade do botão new job*/
+  .capaBotao {
+    /*position: absolute;*/
+    top: 63%;
+    left: 36%;
+    transform: translate(-5%, -5%);
+  }
+  .job {
+    width: 155%;
+  }
+  .job a {
+    padding: 13% 8px;
+  }
+}
+/*--------------------------------------------------------------*/
+/*Resolução de aparelhos entre 481px e 768px de largura de tela */
+@media only screen and (max-width: 768px) and (min-width: 481px) {
+  /*Responsividade da tela preta do header*/
+  .tituloOpen {
+    width: 58%;
+    height: 10%;
+    top: 21%;
+    left: 20%;
+  }
+  /*Responsividade do h1 tituloLumi*/
+  .neon {
+    height: 91%;
+    font-size: 1.5em;
+    padding: 5px;
+    margin-top: 4px;
+  }
+  /*Responsividade do botão buttonOnOff*/
+  .capaBotaoOnOff {
+    top: 66%;
+    left: 21%;
+  }
+  /*Responsividade do botão new job*/
+  .capaBotao {
+    /*position: absolute;*/
+    top: 65%;
+    left: 36%;
+    transform: translate(-5%, -5%);
+  }
+  .job {
+    width: 141%;
+  }
+  .job a {
+    padding: 12% 8px;
+  }
+}
+/*-----------------------------------------------------------------*/
+/*Resolução de smartphones entre 320 e 480px de largura de tela */
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+  /*Responsividade da tela preta do header*/
+  .tituloOpen {
+    width: 64%;
+    height: 10%;
+    top: 27%;
+    left: 18%;
+  }
+  /*Responsividade do h1 tituloLumi*/
+  .neon {
+    height: 95%;
+    font-size: 1.5em;
+    padding: 3px;
+    margin-top: 2px;
+  }
+  /*Responsividade do botão buttonOnOff*/
+  .capaBotaoOnOff {
+    top: 58.5%;
+    left: 13.5%;
+  }
+  /*Responsividade do botão new job*/
+  .capaBotao {
+    /*position: absolute;*/
+    top: 58.5%;
+    left: 34%;
+    transform: translate(-5%, -5%);
+  }
+  .job {
+    width: 75%;
+  }
+  .job a {
+    padding: 5% 8px;
+  }
+}/*# sourceMappingURL=index.css.map */
