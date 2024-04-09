@@ -297,6 +297,21 @@
   text-align: center;
 }
 
+.help {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.help:hover {
+  color: red;
+}
+
+.help:active {
+  color: green;
+  transform: scale(0.8);
+  transition: all 8ms;
+}
+
 form {
   /*border: 2px solid red;*/
   width: 98%;
