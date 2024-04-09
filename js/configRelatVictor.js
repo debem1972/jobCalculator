@@ -151,10 +151,12 @@ function geraPdf() {
 
     //Configuração do arquivo final do pdf
     const options = {
-        margin: [10, 10, 10, 10],
+        margin: [4, 10, 10, 2],
         filename: `relatorioDeHorasTrabalhadas ${mes}${ano}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
-        jsPDf: { unit: "mm", format: "a4", orientation: "portrait" }
+        jsPDf: { unit: "mm", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ['css', 'legacy'] }
     }
 
     //Gerar e baixar o pdf
