@@ -119,6 +119,14 @@ label {
     font-weight: bold;
 }
 
+
+//Estilização dos labels dos input type radio
+.locais label {
+    margin-left: 5px;
+    font-size: 1em;
+}
+
+
 /*Campos input do form*/
 #entradaData {
     width: 110px;
@@ -144,7 +152,8 @@ label {
 #clinica,
 #house,
 #school,
-#fsap {
+#fsap,
+#superVi {
     margin-left: 6px;
 }
 
@@ -401,6 +410,9 @@ label {
         padding: 5% 8px;
     }
 
-
+    .locais label {
+        margin-left: 1px;
+        font-size: 0.7em;
+    }
 
 }
