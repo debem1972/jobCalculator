@@ -785,4 +785,8 @@ h3 {
   .job a {
     padding: 5% 8px;
   }
+  .locais label {
+    margin-left: 1px;
+    font-size: 0.7em;
+  }
 }/*# sourceMappingURL=index.css.map */
