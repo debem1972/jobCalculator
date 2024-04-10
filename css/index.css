@@ -328,6 +328,11 @@ label {
   font-weight: bold;
 }
 
+.locais label {
+  margin-left: 5px;
+  font-size: 1em;
+}
+
 /*Campos input do form*/
 #entradaData {
   width: 110px;

@@ -119,6 +119,14 @@ label {
     font-weight: bold;
 }
 
+
+//Estilização dos labels dos input type radio
+.locais label {
+    margin-left: 5px;
+    font-size: 1em;
+}
+
+
 /*Campos input do form*/
 #entradaData {
     width: 110px;
