@@ -51,9 +51,9 @@ function clickHandler(event) {
         } else {
             // Selecionar a linha
             pintarLinha(clickedRow);
-        };
-    };
-};
+        }
+    }
+}
 
 
 
