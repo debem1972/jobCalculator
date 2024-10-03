@@ -37,18 +37,17 @@ btnDeletarLinha.addEventListener('click', () => {
 
 //--------------------------------------------------------------------
 
-Copiar
-// Função de tratamento de clique
+
 function clickHandler(event) {
     const clickedRow = event.target.closest('tr');
 
-    // Verificar se a linha clicada está dentro do cabeçalho da tabela
-    if (clickedRow && clickedRow.closest('thead')) {
+    // Verificar se a linha clicada é o cabeçalho (primeira linha da tabela)
+    if (clickedRow && clickedRow === tabela.rows[0]) {
         alert("Atenção!!! Este é o cabeçalho da tabela e portanto, ele não pode ser selecionado ou deletado!!!");
         return; // Sai da função sem fazer mais nada
     }
 
-    if (clickedRow && !clickedRow.closest('thead')) {
+    if (clickedRow) {
         if (clickedRow.dataset.selecionada === 'true') {
             // Desfazer a seleção
             clickedRow.classList.remove('linha-selecionada');
@@ -59,7 +58,6 @@ function clickHandler(event) {
         }
     }
 }
-
 
 
 //-------------------------------------------------------------
@@ -86,9 +84,9 @@ function pintarLinha(linha) {
 
 
 //-----------------------------------------------------------------------
-// Function deletarLinha
 function deletarLinha(linha) {
-    if (linha.closest('thead')) {
+    // Verificar se a linha é o cabeçalho (primeira linha da tabela)
+    if (linha === tabela.rows[0]) {
         alert("Atenção!!! Este é o cabeçalho da tabela e portanto, ele não pode ser deletado!!!");
         linha.classList.remove('linha-selecionada');
         linha.removeAttribute('data-selecionada');
@@ -132,11 +130,9 @@ function atualizarTotal() {
     let total = document.getElementById("calcTotalHoras");
     total.innerHTML = totalFormatado;
 
-
     salvarDadosTabela();
-
-    carregarDadosTabela()
-};
+    carregarDadosTabela();
+}
 
 
 // Chama a função para carregar os dados da tabela do localStorage ao carregar a página
