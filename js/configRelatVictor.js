@@ -75,10 +75,31 @@ function geraPrompt() {
         "novembro",
         "nov",
         "dezembro",
-        "dez"
+        "dez",
+        "1",
+        "01",
+        "2",
+        "02",
+        "3",
+        "03",
+        "4",
+        "04",
+        "5",
+        "05",
+        "6",
+        "06",
+        "7",
+        "07",
+        "8",
+        "08",
+        "9",
+        "09",
+        "10",
+        "11",
+        "12"
     ];
     if (!meses.includes(mes.toLowerCase())) {
-        alert("Digite o nome de um mês válido! Preencha todos os campos!");
+        alert("Digite o nome de um mês válido e nos formatos por extenso, ou mmm ou 1 ou 01! Preencha todos os campos!");
         return false;
     };
 
