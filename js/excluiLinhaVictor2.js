@@ -36,14 +36,19 @@ btnDeletarLinha.addEventListener('click', () => {
 });
 
 //--------------------------------------------------------------------
+
+Copiar
 // Função de tratamento de clique
 function clickHandler(event) {
     const clickedRow = event.target.closest('tr');
 
-    // Verificar se a linha clicada não está dentro do cabeçalho da tabela
-    if (clickedRow.closest('thead')) {
+    // Verificar se a linha clicada está dentro do cabeçalho da tabela
+    if (clickedRow && clickedRow.closest('thead')) {
         alert("Atenção!!! Este é o cabeçalho da tabela e portanto, ele não pode ser selecionado ou deletado!!!");
-    } else {
+        return; // Sai da função sem fazer mais nada
+    }
+
+    if (clickedRow && !clickedRow.closest('thead')) {
         if (clickedRow.dataset.selecionada === 'true') {
             // Desfazer a seleção
             clickedRow.classList.remove('linha-selecionada');
@@ -83,7 +88,6 @@ function pintarLinha(linha) {
 //-----------------------------------------------------------------------
 // Function deletarLinha
 function deletarLinha(linha) {
-    // Verificar se a linha é o cabeçalho
     if (linha.closest('thead')) {
         alert("Atenção!!! Este é o cabeçalho da tabela e portanto, ele não pode ser deletado!!!");
         linha.classList.remove('linha-selecionada');
