@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aplicativo web para cálculo e emissão de relatório de horas trabalhadas.">
     <meta name="keywords"
-        content="Aplicativo web, app para cálculo de horas, mobile, app responsivo,responsividade,cálculo de horas,programação web">
+        content="Aplicativo web, app para cálculo de horas, mobile, app responsivo, responsividade, cálculo de horas, programação web">
     <meta name="author" content="Daniel Lopes Bemfica">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/styleG.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -25,39 +25,33 @@
         <section id="open" class="aberturaOpen">
             <header class="tituloOpen">
                 <h1 id="tituloLumi" class="neonOff">Job calculator</h1>
-                <audio src="./audio/electricCurto.mp3" id="som2" type="audio/mpeg">Seu navegador não é
-                    compatível com este tipo de arquivo de audio!</audio>
+                <audio src="./audio/electricCurto.mp3" id="som2" type="audio/mpeg">Seu navegador não é compatível com
+                    este tipo de arquivo de audio!</audio>
             </header>
-
-            <!--Botão liga/desliga-->
             <section class="capaBotaoOnOff">
                 <div>
                     <div class="buttonOnOff">
                         <a href="#" id="ligaDesliga"><i class="fa-solid fa-power-off"></i></a>
                     </div>
-                    <audio src="./audio/compSingleKeyb.mp3" id="som1" type="audio/mpeg">Seu navegador não é
-                        compatível com este tipo de arquivo de audio!</audio>
+                    <audio src="./audio/compSingleKeyb.mp3" id="som1" type="audio/mpeg">Seu navegador não é compatível
+                        com este tipo de arquivo de audio!</audio>
                 </div>
             </section>
-
-            <!--Botão abre folha de dados-->
             <div class="capaBotao">
                 <div class="job">
                     <a href="#" id="novoServico">New Job</a>
-                    <audio src="./audio/compSingleKeyb.mp3" id="som3" type="audio/mpeg">Seu navegador não é
-                        compatível com este tipo de arquivo de audio!</audio>
+                    <audio src="./audio/compSingleKeyb.mp3" id="som3" type="audio/mpeg">Seu navegador não é compatível
+                        com este tipo de arquivo de audio!</audio>
                 </div>
             </div>
         </section>
-
         <section id="entradaDados" class="dadosClosed">
-            <header class="titulo ">
+            <header class="titulo">
                 <h1 class="animate__animated animate__lightSpeedInLeft">Job Calculator <i
                         title="Clique aqui e ouça um importante recado!" class="fa-solid fa-circle-info help"></i></h1>
                 <audio src="./audio/helpJobCalcRachel.mp3" id="helpi" type="audio/mpeg">Seu navegador não é compatível
                     com este tipo de arquivo de audio!</audio>
             </header>
-
             <form id="formulario">
                 <label for="entradaData">Data</label>
                 <input type="text" id="entradaData" name="entradaData" title="Digite a data no formato ddmmaaaa."
@@ -83,7 +77,6 @@
                 <input type="time" id="horaInicio" name="horaInicio" tabindex="7"><br>
                 <label data-label="horaFim" for="horaFim">Hora de fim:</label>
                 <input type="time" id="horaFim" name="horaFim" tabindex="8"><br>
-
                 <section class="botaoTresDe">
                     <div>
                         <div class="button">
@@ -100,7 +93,6 @@
                     placeholder="o que você procura?" autocomplete="off">
             </div>
             <section class="content">
-                <!--<h3 id="subTitulo" class="oculto">Lista de coisas pra se fazer!!!</h3>-->
                 <h3 id="tituloRelatorio" class="oculto">Relatório de Horas Trabalhadas</h3>
                 <div id="cabecalhoRelat">
                     <div id="dadosWorker">
@@ -110,10 +102,9 @@
                         <p id="monthYear" class="oculto"></p>
                     </div>
                 </div>
-
                 <table id="tabela" border="1" width="100%">
-                    <!--<thead>-->
                     <tr>
+                        <th><input type="checkbox" id="selectAll" title="Selecionar todas as linhas"></th>
                         <th>Data</th>
                         <th>Paciente</th>
                         <th>Local</th>
@@ -121,9 +112,6 @@
                         <th>Hora de fim</th>
                         <th>Sub Total</th>
                     </tr>
-                    <!--</thead>-->
-                    <!--<tbody>
-                    </tbody>-->
                 </table>
                 <div id="total">
                     <fieldset id="campoTotalHoras">
@@ -134,7 +122,6 @@
                     </fieldset>
                 </div>
             </section>
-
             <footer class="comandos">
                 <div class="edicao">
                     <button class="controls" id="editarDados" onclick="editar()" title="Editar linha"><i
@@ -142,30 +129,31 @@
                     <button class="controls" id="finalizaEdit" onclick="finalizarEdicao()" title="Finaliza edição"><i
                             class="fa-solid fa-pen-to-square"></i></button>
                     <audio src="./audio/alertaModal.mp3" id="somAlert" type="audio/mpeg">Seu navegador não suporta este
-                        tipo de arquivo de
-                        audio!</audio>
+                        tipo de arquivo de audio!</audio>
                     <button id="btnDeletarLinha" title="Deletar linha"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
                 <div class="relatExit">
+                    <button class="controls" id="btnExportarJson" title="Exportar JSON"><i
+                            class="fas fa-file-export"></i></button>
+                    <button class="controls" id="btnImportarJson" title="Importar JSON"><i
+                            class="fas fa-file-import"></i></button>
                     <button class="controls" id="relatorio" onclick="geraPrompt()" title="Gerar relatório"><i
                             class="fa-solid fa-chart-bar"></i></button>
                     <button id="encerrar" onclick="encerrar()" title="Fechar página"><i
                             class="fa-solid fa-circle-xmark"></i></button>
-
                 </div>
-
             </footer>
+            <input type="file" id="inputImportarJson" style="display: none;" accept=".json">
         </section>
     </main>
     <script src="./js/filtroPesquisa2Victor1.js"></script>
-    <script src="./js/configRelatVictor.js"></script>
-    <script src="./js/calculaHorasEditVictor4.js"></script>
-    <script src="./js/editTableVictor6.js"></script>
+    <script src="./js/configRelatVictorG.js"></script>
+    <script src="./js/calculaHorasEditVictorG4 .js"></script>
+    <script src="./js/editTableVictorG6 .js"></script>
     <script src="./js/openClosePages2.js"></script>
     <script src="./js/ligaRegistradora.js"></script>
-    <script src="./js/excluiLinhaVictor2.js"></script>
+    <script src="./js/excluiLinhaVictorG2.js"></script>
     <script src="./js/help.js"></script>
-
 </body>
 
 </html>
