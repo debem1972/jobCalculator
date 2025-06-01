@@ -634,14 +634,32 @@ h3 {
 }
 
 /*------------------------------------------------*/
+/*Novos botões*/
+#btnDeletarLinha.pulsar {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #dc3545;
+  }
+  50% {
+    background-color: #ff6666;
+  }
+  100% {
+    background-color: #dc3545;
+  }
+}
+#tabela th:first-child,
+#tabela td:first-child {
+  width: 50px;
+  text-align: center;
+}
+
+/*-------------------------------------------------*/
 /*breakpoints  e RESPONSIVIDADE  */
 /*Resoluções de aparelhos acima de 1201px de largura de tela*/
 @media only screen and (min-width: 1201px) {
-  /*Responsividade do botão buttonOnOff*/
-  /*.capaBotaoOnOff {
-      top: 70%;
-      left: 33%;
-  }*/
   /*Responsividade do botão new job*/
   .capaBotao {
     /*position: absolute;*/
@@ -659,11 +677,6 @@ h3 {
 /*-----------------------------------------------------------------*/
 /*Resolução de aparelhos entre 1025px e 1200px de largura de tela */
 @media only screen and (max-width: 1200px) and (min-width: 1025px) {
-  /*Responsividade do botão buttonOnOff*/
-  /*.capaBotaoOnOff {
-      top: 70%;
-      left: 37%;
-  }*/
   /*Responsividade do botão new job*/
   .capaBotao {
     /*position: absolute;*/
@@ -789,4 +802,4 @@ h3 {
     margin-left: 1px;
     font-size: 0.7em;
   }
-}/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=styleG.css.map */
