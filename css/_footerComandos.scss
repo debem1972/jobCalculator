@@ -48,6 +48,12 @@
 .controls,
 #encerrar {
     cursor: pointer;
+    /*Novos estilos*/
+    background-color: $rato;
+    border: none;
+    border-radius: 5px;
+    color: $branco;
+    transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
 }
 
 
@@ -62,6 +68,27 @@
     background-color: $sombraInterna2;
     color: $sangue;
     text-shadow: 2px 2px 4px $branco, -2px -2px 4px $branco;
+}
+
+/*Efeito pulsar do botão deletar*/
+#btnDeletarLinha.pulsar {
+    animation: pulse 1s infinite;
+    background-color: $sangue !important; // Garante que a animação tenha precedência
+    color: $branco !important;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: $sangue;
+    }
+
+    50% {
+        background-color: $sangueClaro;
+    }
+
+    100% {
+        background-color: $sangue;
+    }
 }
 
 #encerrar:hover {
