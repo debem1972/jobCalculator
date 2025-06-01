@@ -187,24 +187,24 @@ label {
 @import "./footerComandos";
 
 /*------------------------------------------------*/
-/*Novos botões*/
-#btnDeletarLinha.pulsar {
+/*Efeito pulsar do botão deletar transferido para o arquivo _footerComandos.scss*/
+/*#btnDeletarLinha.pulsar {
     animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
     0% {
-        background-color: #dc3545;
+        background-color: $sangue;
     }
 
     50% {
-        background-color: #ff6666;
+        background-color: $sangueClaro;
     }
 
     100% {
-        background-color: #dc3545;
+        background-color: $sangue;
     }
-}
+}*/
 
 #tabela th:first-child,
 #tabela td:first-child {

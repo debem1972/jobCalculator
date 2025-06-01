@@ -614,6 +614,12 @@ h3 {
 .controls,
 #encerrar {
   cursor: pointer;
+  /*Novos estilos*/
+  background-color: grey;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
 }
 
 /*Efeitos nos botões*/
@@ -628,6 +634,24 @@ h3 {
   text-shadow: 2px 2px 4px white, -2px -2px 4px white;
 }
 
+/*Efeito pulsar do botão deletar*/
+#btnDeletarLinha.pulsar {
+  animation: pulse 1s infinite;
+  background-color: red !important;
+  color: white !important;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: #cc9494;
+  }
+  100% {
+    background-color: red;
+  }
+}
 #encerrar:hover {
   background-color: red;
   color: white;

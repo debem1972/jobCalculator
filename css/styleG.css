@@ -614,6 +614,12 @@ h3 {
 .controls,
 #encerrar {
   cursor: pointer;
+  /*Novos estilos*/
+  background-color: grey;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, text-shadow 0.3s;
 }
 
 /*Efeitos nos botões*/
@@ -628,28 +634,48 @@ h3 {
   text-shadow: 2px 2px 4px white, -2px -2px 4px white;
 }
 
+/*Efeito pulsar do botão deletar*/
+#btnDeletarLinha.pulsar {
+  animation: pulse 1s infinite;
+  background-color: red !important;
+  color: white !important;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: #cc9494;
+  }
+  100% {
+    background-color: red;
+  }
+}
 #encerrar:hover {
   background-color: red;
   color: white;
 }
 
 /*------------------------------------------------*/
-/*Novos botões*/
-#btnDeletarLinha.pulsar {
-  animation: pulse 1s infinite;
+/*Efeito pulsar do botão deletar transferido para o arquivo _footerComandos.scss*/
+/*#btnDeletarLinha.pulsar {
+    animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-  0% {
-    background-color: #dc3545;
-  }
-  50% {
-    background-color: #ff6666;
-  }
-  100% {
-    background-color: #dc3545;
-  }
-}
+    0% {
+        background-color: $sangue;
+    }
+
+    50% {
+        background-color: $sangueClaro;
+    }
+
+    100% {
+        background-color: $sangue;
+    }
+}*/
 #tabela th:first-child,
 #tabela td:first-child {
   width: 50px;
