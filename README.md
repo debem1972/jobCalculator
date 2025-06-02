@@ -1,4 +1,79 @@
-# jobCalculator
-Calculadora de horas trabalhadas.
-Este app web foi criado com muito carinho para atender uma demanda de minha filha e para servir de base para outros projetos futuros.Foram utilizadas as tecnologias html,css,SASS,javaScript,responsividade e gitHub. Como é um trabalho didático, é totalmente gratuíto para qualquer um poder utilizá-lo, porém não poderá ser comercializado.Foram utilizados ícones gratuítos do Font Awesome via cdn na construção da página. Também utilizei, efeitos de audio gratuítos do site www.zapsplat.com, para trazer um pouco de descontração ao usuário. A imagem da capa foi criada com a IA DALL-E  no site www.bing.com e editada no site www.photorrom.com . Utilizei também tutoriais do youtube na  estilização da página. Utilizei também para esclarecer dúvidas na construção da inteligência da página, as IA's gratuitas chatGPT-3 da empresa openIA, chatGPT-4 pelo Copilot do Bing da empresa Microsoft e o Bard da empresa Google. Foram utilizadas as seguintes cdn's: animate.css para animar um título; html2pdf para gerar o relatório em pdf e sweetalert para gerar um modal personalizado.
-Como salva os dados da table no localStorage, não há muita capacidade de armazenamento(5MB).Como é uma operação síncrona,carregá-lo com muitos dados afetará o desempenho da página e portanto aconselho após reunir os cálculos de um mês de horas e realizar a emissão do relatório, deletar os dados já utilizados.Façam um bom uso!!!  
+jobCalculator 🕒
+Uma calculadora de horas trabalhadas criada com carinho para atender necessidades reais e servir como base para futuros projetos.
+
+📖 Sobre o Projeto
+O jobCalculator é um aplicativo web desenvolvido para calcular horas trabalhadas de forma prática e intuitiva. Este projeto foi criado com muito carinho para atender uma demanda pessoal da minha filha e, ao mesmo tempo, servir como um ponto de partida para outros projetos. Ele é 100% gratuito para uso, mas não pode ser comercializado, pois se trata de um trabalho didático.
+
+✨ Funcionalidades
+
+Cálculo de horas trabalhadas: Interface simples e funcional para registrar e calcular horas.
+Persistência de dados: Os dados são salvos em IndexedDB, permitindo exportação e importação em formato JSON para maior segurança e mobilidade.
+Backup e recuperação: Caso o cache do navegador seja limpo, os dados podem ser restaurados a partir de um arquivo JSON salvo.
+Exclusão flexível: Nova funcionalidade para deletar dados da tabela, com opções para selecionar todas as linhas ou apenas linhas específicas usando checkboxes.
+Relatórios em PDF: Geração de relatórios em PDF com a biblioteca html2pdf.
+Modal personalizado: Alertas e mensagens interativas com SweetAlert.
+Efeitos sonoros: Sons gratuitos do Zapsplat para uma experiência mais descontraída.
+Animações: Efeitos visuais no título com a biblioteca animate.css.
+
+
+🛠️ Tecnologias Utilizadas
+O projeto foi construído com as seguintes tecnologias:
+
+HTML: Estrutura da página.
+CSS/SASS: Estilização moderna e organizada.
+JavaScript: Lógica e interatividade.
+Responsividade: Design adaptável para diferentes dispositivos.
+GitHub: Controle de versão e hospedagem do código.
+IndexedDB: Armazenamento local de dados.
+CDNs:
+Font Awesome (ícones gratuitos).
+animate.css (animações no título).
+html2pdf (geração de relatórios em PDF).
+SweetAlert (modais personalizados).
+
+
+
+Recursos Externos
+
+Imagens: Capa gerada com DALL-E no Bing e editada no Photopea.
+Áudio: Efeitos sonoros gratuitos do Zapsplat.
+Tutoriais: Vídeos do YouTube para estilização da página.
+Inteligências Artificiais:
+ChatGPT-3 (OpenAI)
+ChatGPT-4 via Copilot (Microsoft)
+Bard (Google)
+
+
+
+
+🚀 Como Usar
+
+Acesse o aplicativo: Abra o jobCalculator no seu navegador.
+Registre suas horas: Insira os dados de trabalho na interface.
+Gerencie os dados:
+Exporte os dados como JSON para backup.
+Importe arquivos JSON para restaurar dados.
+Use checkboxes para selecionar e excluir linhas específicas ou todas de uma vez.
+
+
+Gere relatórios: Exporte os dados em PDF com um clique.
+Aproveite os efeitos visuais e sonoros para uma experiência mais dinâmica!
+
+
+🔐 Segurança e Backup
+Com a nova atualização, os dados são armazenados no IndexedDB, garantindo maior segurança. Para proteger seus dados:
+
+Exporte regularmente seus dados como JSON.
+Caso o cache do navegador seja limpo, importe o JSON mais recente para restaurar a tabela.
+
+
+📝 Notas Finais
+Este projeto foi desenvolvido com propósitos educacionais e para atender uma necessidade específica. Ele é totalmente gratuito e aberto para uso, desde que não seja comercializado. Aproveite, explore e faça bom uso!
+
+🙌 Agradecimentos
+
+À minha filha, por inspirar este projeto.
+Às comunidades de desenvolvimento, tutoriais no YouTube e IAs que ajudaram na construção e aprendizado.
+Às ferramentas gratuitas que tornaram este projeto possível.
+
+  
