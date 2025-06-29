@@ -58,7 +58,7 @@ function geraPrompt() {
     });
 }
 
-function geraPdf(mes, ano) {
+/*function geraPdf(mes, ano) {
     const conteudo = document.querySelector('.content');
     const options = {
         margin: [4, 10, 10, 2],
@@ -69,4 +69,34 @@ function geraPdf(mes, ano) {
         pagebreak: { mode: ['css', 'legacy'] }
     };
     html2pdf().set(options).from(conteudo).save();
+}*/
+
+//Nova function gerarPdf com ocultação de checkboxes e coluna
+function geraPdf(mes, ano) {
+    const conteudo = document.querySelector('.content');
+
+    // 🔴 OCULTAR CHECKBOXES E COLUNA
+    const checkboxTh = document.querySelector('#tabela th:first-child');
+    const checkboxTds = document.querySelectorAll('#tabela td:first-child');
+
+    // Esconde a célula de título (th)
+    if (checkboxTh) checkboxTh.style.display = 'none';
+
+    // Esconde as células de dados (tds)
+    checkboxTds.forEach(td => td.style.display = 'none');
+
+    const options = {
+        margin: [4, 10, 10, 2],
+        filename: `relatorioDeHoras${mes}${ano}.pdf`,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+        pagebreak: { mode: ['css', 'legacy'] }
+    };
+
+    html2pdf().set(options).from(conteudo).save().then(() => {
+        // ✅ REEXIBIR APÓS GERAÇÃO DO PDF
+        if (checkboxTh) checkboxTh.style.display = '';
+        checkboxTds.forEach(td => td.style.display = '');
+    });
 }
